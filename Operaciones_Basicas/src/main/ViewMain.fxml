@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:id="root_vbox" alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@../assets/SOConsole.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox fx:id="top_section_hbox" prefHeight="50.0" prefWidth="600.0" styleClass="background_2" VBox.vgrow="NEVER" />
+      <HBox fx:id="working_area_hbox" alignment="CENTER_LEFT" prefHeight="300.0" prefWidth="600.0" styleClass="background_4" VBox.vgrow="ALWAYS">
+         <children>
+            <VBox fx:id="middle_left_section_vbox" alignment="CENTER_LEFT" prefHeight="300.0" prefWidth="300.0" HBox.hgrow="NEVER">
+               <children>
+                  <HBox fx:id="first_field_hbox" alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="200.0" VBox.vgrow="NEVER">
+                     <children>
+                        <Label fx:id="value_1_lbl" prefWidth="125.0" styleClass="description_label" text="Value 1:" HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets left="15.0" right="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="value_1_tfield" alignment="CENTER" styleClass="input_field" HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets right="15.0" />
+                           </HBox.margin>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <HBox fx:id="second_field_hbox" alignment="CENTER_LEFT" layoutX="10.0" layoutY="135.0" prefHeight="50.0" prefWidth="200.0" VBox.vgrow="NEVER">
+                     <children>
+                        <Label fx:id="value_2_lbl" prefWidth="125.0" styleClass="description_label" text="Value 2:" HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets left="15.0" right="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="value_2_tfield" alignment="CENTER" styleClass="input_field" HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets right="15.0" />
+                           </HBox.margin>
+                        </TextField>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox fx:id="middle_right_section_vbox" alignment="TOP_CENTER" prefHeight="300.0" prefWidth="300.0" styleClass="background_3" HBox.hgrow="ALWAYS">
+               <children>
+                  <HBox fx:id="result_container_hbox" alignment="CENTER" prefHeight="50.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <Label fx:id="result_lbl" styleClass="description_label" text="Result" />
+                     </children>
+                  </HBox>
+                  <HBox fx:id="first_row_operands_hbox" alignment="CENTER" prefHeight="75.0" prefWidth="200.0" VBox.vgrow="NEVER">
+                     <children>
+                        <Button fx:id="addition_btn" mnemonicParsing="false" onAction="#Add" prefHeight="50.0" prefWidth="100.0" styleClass="quick_menu_button" text="+" HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets left="5.0" right="15.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="Cantarell Bold" size="55.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="sustraction_btn" mnemonicParsing="false" onAction="#Sustract" prefHeight="50.0" prefWidth="100.0" styleClass="quick_menu_button" text="-" HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets left="15.0" right="5.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="Cantarell Bold" size="55.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox fx:id="second_row_operands_hbox" alignment="CENTER" prefHeight="75.0" prefWidth="200.0" VBox.vgrow="NEVER">
+                     <children>
+                        <Button fx:id="division_btn" mnemonicParsing="false" onAction="#Divide" prefHeight="50.0" prefWidth="100.0" styleClass="quick_menu_button" text=" ÷" HBox.hgrow="ALWAYS">
+                           <font>
+                              <Font name="Cantarell Bold" size="55.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="5.0" right="15.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="multiplication_btn" layoutX="110.0" layoutY="23.0" mnemonicParsing="false" onAction="#Multiply" prefHeight="50.0" prefWidth="100.0" styleClass="quick_menu_button" text="x" HBox.hgrow="ALWAYS">
+                           <font>
+                              <Font name="Cantarell Bold" size="55.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="15.0" right="5.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox fx:id="third_row_operands_hbox" alignment="CENTER" prefHeight="75.0" prefWidth="200.0" VBox.vgrow="NEVER">
+                     <children>
+                        <Button fx:id="remainder_btn" mnemonicParsing="false" onAction="#Module" prefHeight="50.0" prefWidth="100.0" styleClass="quick_menu_button" text="MOD">
+                           <font>
+                              <Font name="Cantarell Bold" size="55.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="5.0" right="15.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="clear_btn" layoutX="110.0" layoutY="31.0" mnemonicParsing="false" onAction="#ClearInputFields" prefHeight="50.0" prefWidth="100.0" styleClass="quick_menu_button" text="Clear">
+                           <font>
+                              <Font name="Cantarell Bold" size="55.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="15.0" right="5.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children></HBox>
+      <HBox fx:id="bottom_section_hbox" alignment="CENTER" prefHeight="50.0" prefWidth="600.0" styleClass="background" VBox.vgrow="NEVER" />
+   </children>
+</VBox>
