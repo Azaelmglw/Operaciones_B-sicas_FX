@@ -10,6 +10,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.stage.Stage;
 
 /**
@@ -69,6 +70,13 @@ public class Main extends Application{
             
             //  Scenes Declaration.
             Scene main_scene = new Scene(main, 800, 768);
+            
+            //  Alerts Declaration.
+            Alert error_alert = new Alert(Alert.AlertType.ERROR);
+            error_alert.setTitle("Something went wrong");
+            
+            //  Alerts Assignation.
+            model_main.setAlert(0, error_alert);
             
             /*  Only the <<main>> UI is set in this method, all of the other manipulations of <<primaryStage>>
             need to be declared in it's respective Controllers.*/
